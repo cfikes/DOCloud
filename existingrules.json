@@ -1,0 +1,7 @@
+{ "rules" : [
+	{ "friendlyname": "Rule001", "sourcenet": "192.168.0.0/16", "destport": "22", "protocol": "tcp", "action": "ACCEPT"},
+	{ "friendlyname": "Rule002", "sourcenet": "0.0.0.0/0", "destport": "80", "protocol": "tcp", "action": "ACCEPT"},
+	{ "friendlyname": "Rule003", "sourcenet": "0.0.0.0/0", "destport": "443", "protocol": "tcp", "action": "ACCEPT"},
+	{ "friendlyname": "Rule004", "sourcenet": "0.0.0.0/0", "destport": "22", "protocol": "tcp", "action": "DROP"}
+	]
+}

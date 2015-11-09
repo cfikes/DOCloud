@@ -1,0 +1,5 @@
+{ "datacenters" : [
+	{ "name" : "New York", "key": "nyc", "icon" : "usaflag-sm.png", "note1" : "Private Networking", "note2" : "Dual Stack IPv4 IPv6", "note3" : "Backups Available" },
+	{ "name" : "San Francisco", "key": "sanfran", "icon" : "usaflag-sm.png", "note1" : "Private Networking", "note2" : "Dual Stack IPv4 IPv6", "note3" : "Backups Available" }
+	]
+}

@@ -1,0 +1,18 @@
+{
+    "Name": "The DO Cloud",
+    "Company": "FikesMedia",
+    "SupportE": "support@fikesmedia.com",
+    "SupportT": "1.409.291.4225",
+    "SMTPServer": "mail.zoho.com",
+    "SMTPUsername": "noreply@fikesmedia.com",
+    "SMTPPassword": "Feekesis#1",
+    "SMTPSecurity": "TLS",
+    "SMTPPort": "587",
+    "MYSQLServer": "localhost",
+    "MYSQLPort": "3306",
+    "MYSQLDatabase": "docloud",
+    "MYSQLUsername": "root",
+    "MYSQLPassword": "Feekesis#1",
+    "DOTokenName": "FikesMedia-DOCloud",
+    "DOToken": "742a2a6b7f38364ff1798f22eaf44918d8fbdc09cd33c049b43da2de8ffe93a7"
+}

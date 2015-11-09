@@ -1,0 +1,30 @@
+{
+    "templates": [
+        {
+            "name": "Ubiquiti UniFi Controller",
+            "key": "unifiubuntu",
+            "icon": "ubnt-med.png",
+            "os": "Ubuntu LTS 14.04 x64",
+            "costm": "18",
+            "costh": "0.027",
+            "ram": "1",
+            "cpu": "1",
+			"storage" : "30",
+			"transfer" : "2",
+            "desc": "Powerful network controller for Ubiquiti UniFi network hardware. Manage your UniFi wireless access points, UniFi security appliances and even your UniFi telephony products."
+        },
+        {
+            "name": "OSTicket Support Ticket System",
+            "key": "osticketubuntu",
+            "icon": "osticket-med.png",
+            "os": "Ubuntu LTS 14.04 x64",
+            "costm": "18",
+            "costh": "0.027",
+            "ram": "1",
+            "cpu": "1",
+			"storage" : "30",
+			"transfer" : "2",
+            "desc": "Simple helpdesk system powered by OSTicket. Manage support request, troubleshooting, and keep a knowledge base of previous cases."
+        }
+    ]
+}

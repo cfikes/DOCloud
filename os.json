@@ -1,0 +1,9 @@
+{ "os" : [
+	{ "name" : "Ubuntu", "key" : "ubuntu", "icon" : "ubuntu-sm.png", "version" : "LTS 14.04 x64", "note1" : "Open Source", "note2" : "&nbsp;" },
+	{ "name" : "CentOS", "key" : "centos", "icon" : "centos-sm.png", "version" : "7 x64", "note1" : "Open Source", "note2" : "&nbsp;" },
+	{ "name" : "Debian", "key" : "debian", "icon" : "debian-sm.png", "version" : "7.0 x64", "note1" : "Open Source", "note2" : "&nbsp;" },
+	{ "name" : "Fedora", "key" : "fedora", "icon" : "fedora-sm.png", "version" : "21 x64", "note1" : "Open Source", "note2" : "&nbsp;" },
+	{ "name" : "Windows 2012 R2", "key" : "windowss", "icon" : "msft-sm.png", "version" : "Server 2012 Standard", "note1" : "BYOLicense", "note2" : "Less 512Mb of Memory" },
+	{ "name" : "Windows 2012 R2", "key" : "windowse", "icon" : "msft-sm.png", "version" : "Server 2012 Enterprise", "note1" : "BYOLicense", "note2" : "Less 512Mb of Memory" }
+	]
+}

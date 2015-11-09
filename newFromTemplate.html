@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--<PHP session_start(); if(!empty($_SESSION['valid'])) { //NOTHING } else { HEADER("LOCATION: login.php"); } ?>-->
+<html lang="en-us" dir="ltr" class="uk-height-1-1">
+    <head>
+		<title>FikesMedia - DoCloud</title>
+		<link rel="stylesheet" href="css/uikit.almost-flat.min.css" />
+		<link rel="stylesheet" href="css/components/sortable.min.css" />
+		<link rel="stylesheet" href="css/components/notify.almost-flat.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+    </head>
+	<body class="uk-notouch uk-container-center">
+		<div class="uk-container uk-container-center uk-margin-large-bottom">
+	
+			<!-- BEGIN NAVIGATION -->
+			<nav class="uk-navbar">
+			<a href="" class="uk-navbar-brand"><img src="img/fmlogo-navbar.png"></a>
+			<ul class="uk-navbar-nav">
+				<li><a href="dashboard.html"><i class="uk-icon-dashboard"></i> My Cloud</a></li>
+			</ul>
+			<ul class="uk-navbar-nav">
+				<li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+					<a href=""><i class="uk-icon-cloud"></i> Cloud Hardware</a>
+					<div class="uk-dropdown uk-dropdown-navbar">
+						<ul class="uk-nav uk-nav-navbar">
+							<!--<li class="uk-nav-divider"></li>-->
+							<li class="uk-nav-header"><i class="uk-icon-server"></i> Bare Metal</li>
+							<li><a href="newMetal.html">Create Server</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-desktop"></i> Forged Metal</li>
+							<li><a href="newFromTemplate.html">Deploy Template</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="uk-navbar-nav">
+				<li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+					<a href=""><i class="uk-icon-cloud"></i> Cloud Services</a>
+					<div class="uk-dropdown uk-dropdown-navbar">
+						<ul class="uk-nav uk-nav-navbar">
+							<li><a href="#"><i class="uk-icon-user"></i> My Services</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-cubes"></i> Hosted Solutions</li>
+							<li><a href="#">New UniFi Site</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-fire"></i> Managed Firewall</li>
+							<li><a href="firewall.html">Manage Firewall Rules</a></li>
+							<li><a href="#">VPN Connections</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="uk-navbar-nav"><li><a href="#"><i class="uk-icon-support"></i> Support</a></li></ul>
+			<div class="uk-navbar-content uk-navbar-flip  uk-hidden-small">
+				<div class="uk-button-group">
+					<a class="uk-button uk-button-danger" href="index.html"><i class="uk-icon-close"></i> Logout</a>
+				</div>
+			</div>
+			</nav>
+			<!-- END NAVIGATION -->
+
+			<!-- BEGIN Content -->
+			<div class="uk-container">
+				<h1 class="uk-margin-top">Create New Server</h1>
+				<h3 id="installprofile">&nbsp;</h3>
+				<form class="uk-form" action="#">
+				<fieldset>
+				<div class="uk-form-row uk-margin uk-margin-right">
+					<h3>Server Hostname</h3>
+					<input type="text" name="hostname" id="hostname" placeholder="" class="uk-form-large uk-width-1-1">
+					<p class="uk-form-help-block">special characters not allowed</p>
+				</div>
+				<!-- Begin Server Size Section -->
+				<h3>Available Templates</h3>
+				<!-- Begin Grid -->
+				<div class="uk-grid uk-margin uk-margin-right" id="templatePackages">
+				</div>
+				<!-- END Grid -->
+				
+				<!-- Begin Region Section -->
+				<h3>Datacenter Region</h3>
+				<!-- Begin Grid -->
+				<div class="uk-grid uk-margin uk-margin-right" id="datacenterPackages">
+				</div>
+				<!--End Grid -->
+				
+				<hr>
+				<div class="uk-form-row uk-margin uk-margin-right">
+					<a class="uk-button uk-button-primary uk-button-large uk-width-100"  id="createserver">Create Server</a>
+				</div>
+				
+				<!-- Hidden fields taking input from panels -->
+				<input type="hidden" name="region" id="region">
+				<input type="hidden" name="template" id="template">
+				</fieldset>
+				</form>
+
+			</div>
+		</div>
+		<!-- Load Javascript LAST -->
+		<script src="js/jquery.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<script src="js/components/sortable.min.js"></script>
+		<script src="js/components/notify.min.js"></script>
+		<script src="js/newFromTemplate.js"></script>
+	</body>
+</html>

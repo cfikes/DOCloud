@@ -1,0 +1,8 @@
+{ "packages" : [
+	{ "name" : "Mini Server", "key": "mini", "costm" : "15", "costh" : "0.0225", "ram" : "1", "cpu" : "1", "storage" : "30", "transfer" : "2" },
+	{ "name" : "Small Server", "key": "small", "costm" : "30", "costh" : "0.045", "ram" : "2", "cpu" : "2", "storage" : "40", "transfer" : "3" },
+	{ "name" : "Standard Server", "key": "standard", "costm" : "60", "costh" : "0.09", "ram" : "4", "cpu" : "2", "storage" : "60", "transfer" : "4" },
+	{ "name" : "Large Server", "key": "large", "costm" : "120", "costh" : "0.1785", "ram" : "8", "cpu" : "4", "storage" : "80", "transfer" : "5" },
+	{ "name" : "Larger Server", "key": "larger", "costm" : "240", "costh" : "0.357", "ram" : "16", "cpu" : "8", "storage" : "160", "transfer" : "6" }
+	]
+}

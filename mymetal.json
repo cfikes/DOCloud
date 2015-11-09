@@ -1,0 +1,36 @@
+{
+    "hosts": [
+        {
+            "hostname" : "Server001",
+			"key" : "0000123",
+            "os": "Ubuntu LTS 14.04 x64",
+            "size": "Small",
+            "datacenter": "New York",
+            "ipaddress": "1.1.1.2/24"
+        },
+        {
+            "hostname": "Server002",
+			"key" : "0000456",
+            "os": "Debian 7.0 x64",
+            "size": "Small",
+            "datacenter": "San Francisco",
+            "ipaddress": "1.2.1.2/24"
+        },
+        {
+            "hostname": "Server003",
+			"key" : "0001123",
+            "os": "Windows 2012 R2 Server Standard",
+            "size": "Standard",
+            "datacenter": "New York",
+            "ipaddress": "1.1.1.3/24"
+        },
+		{
+			"hostname": "Server004",
+			"key" : "0001456",
+            "os": "Windows 2012 R2 Server Enterprise",
+            "size": "Standard",
+            "datacenter": "San Francisco",
+            "ipaddress": "1.2.1.3/24"
+		}
+    ]
+}

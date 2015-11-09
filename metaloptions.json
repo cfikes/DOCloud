@@ -1,0 +1,6 @@
+{ "options" : [
+	{ "name" : "IPv6" , "key" : "enableipv6" },
+	{ "name" : "Backups", "key" : "enablebackups" },
+	{ "name" : "Private Networking", "key" : "privatenetworking" }
+	]
+}

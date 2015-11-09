@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" class="uk-height-1-1">
+    <head>
+        <title>FikesMedia - DoCloud</title>
+        <link rel="stylesheet" href="css/uikit.almost-flat.min.css" />
+		<link rel="stylesheet" href="css/components/sortable.min.css" />
+        <link rel="stylesheet" href="css/components/notify.almost-flat.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+    </head>
+	<body class="uk-notouch uk-container-center">
+		<div class="uk-container uk-container-center uk-margin-large-bottom">
+	
+			<!-- BEGIN NAVIGATION -->
+			<nav class="uk-navbar">
+			<a href="" class="uk-navbar-brand"><img src="img/fmlogo-navbar.png"></a>
+			<ul class="uk-navbar-nav">
+				<li class="uk-active"><a href="dashboard.html"><i class="uk-icon-dashboard"></i> My Cloud</a></li>
+			</ul>
+			<ul class="uk-navbar-nav">
+				<li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+					<a href=""><i class="uk-icon-cloud"></i> Cloud Hardware</a>
+					<div class="uk-dropdown uk-dropdown-navbar">
+						<ul class="uk-nav uk-nav-navbar">
+							<!--<li class="uk-nav-divider"></li>-->
+							<li class="uk-nav-header"><i class="uk-icon-server"></i> Bare Metal</li>
+							<li><a href="newMetal.html">Create Server</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-desktop"></i> Forged Metal</li>
+							<li><a href="newFromTemplate.html">Deploy Template</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="uk-navbar-nav">
+				<li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+					<a href=""><i class="uk-icon-cloud"></i> Cloud Services</a>
+					<div class="uk-dropdown uk-dropdown-navbar">
+						<ul class="uk-nav uk-nav-navbar">
+							<li><a href="#"><i class="uk-icon-user"></i> My Services</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-cubes"></i> Hosted Solutions</li>
+							<li><a href="#">New UniFi Site</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-fire"></i> Managed Firewall</li>
+							<li><a href="firewall.html">Manage Firewall Rules</a></li>
+							<li><a href="#">VPN Connections</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="uk-navbar-nav"><li><a href="#"><i class="uk-icon-support"></i> Support</a></li></ul>
+			<div class="uk-navbar-content uk-navbar-flip  uk-hidden-small">
+				<div class="uk-button-group">
+					<a class="uk-button uk-button-danger" href="index.html"><i class="uk-icon-close"></i> Logout</a>
+				</div>
+			</div>
+			</nav>
+			<!-- END NAVIGATION -->
+
+	
+
+			<!-- BEGIN DASHBOARD -->
+			<div class="uk-container">
+				<h1 class="uk-margin-top">Dashboard</h1>
+				<!-- Begin Grid -->
+				<div class="uk-grid uk-margin uk-margin-right" id="myhosts">
+					
+				</div>
+				<!-- END Grid -->
+			</div>
+
+	
+		</div>
+		<!-- End UK Container -->
+		<!-- Load Javascript LAST -->
+		<script src="js/jquery.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<script src="js/components/sortable.min.js"></script>
+		<script src="js/components/notify.min.js"></script>
+		<script src="js/dashboard.js"></script>
+	</body>
+</html>

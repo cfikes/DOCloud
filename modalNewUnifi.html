@@ -1,0 +1,245 @@
+	<!-- New UniFi Controller Modal -->
+
+<div id="newUnifiModal" class="uk-modal">
+
+	<div class="uk-modal-dialog uk-modal-dialog-large">
+
+		<button type="button" class="uk-modal-close uk-close"></button>
+
+		<h1>Create New UniFi Controller</h1>
+
+		<h3 id="installprofile">&nbsp;</h3>
+
+		<div class="uk-overflow-container">
+
+			<form class="uk-form" action="#">
+
+			<p>
+
+			
+
+			<fieldset>
+
+			<div class="uk-form-row uk-margin uk-margin-right">
+
+				<h3>UniFi Hostname</h3>
+
+				<input type="text" name="unifihostname" id="unifihostname" placeholder="" class="uk-form-large uk-width-1-1">
+
+				<p class="uk-form-help-block">special characters not allowed</p>
+
+			</div>
+
+			
+
+			<h3>Server Size</h3>
+
+			<div class="uk-grid uk-margin uk-margin-right">
+
+				<!-- Grid Item -->
+
+				<div class="uk-width-1-5">
+
+					<div class="uk-panel uk-panel-box uk-text-center unifisizeselection" serversize="mini">
+
+						<h3 class="uk-panel-title">Mini Server</h3>
+
+						<hr>
+
+						<dl>
+
+							<dt>$15<small>/MO</small></dt>
+
+							<dd>$0.0225<small>/hour</small>
+
+							<dt>1 GB/ 1 CPU</dt>
+
+							<dt>30 GB SSD</dt>
+
+							<dt>2 TB Transfer</dt>
+
+						</dl>
+
+					</div>
+
+				</div><!-- End Item -->
+
+				<!-- Grid Item -->
+
+				<div class="uk-width-1-5">
+
+					<div class="uk-panel uk-panel-box uk-text-center unifisizeselection" serversize="small">
+
+						<h3 class="uk-panel-title">Small Server</h3>
+
+						<hr>
+
+						<dl>
+
+							<dt>$30<small>/MO</small></dt>
+
+							<dd>$0.045<small>/hour</small>
+
+							<dt>2 GB/ 2 CPU</dt>
+
+							<dt>40 GB SSD</dt>
+
+							<dt>3 TB Transfer</dt>
+
+						</dl>
+
+					</div>
+
+				</div><!-- End Item -->			
+
+				
+
+			</div><!-- END Grid -->
+
+			
+
+			<h3>Datacenter Region</h3>
+
+			<div class="uk-grid uk-margin uk-margin-right">
+
+				<!-- Grid Item -->
+
+				<div class="uk-width-1-5">
+
+					<div class="uk-panel uk-panel-box uk-text-center unifiregionselection" region="nyc">
+
+						<p><img src="img/usaflag-sm.png"></p>
+
+						<h3 class="uk-panel-title">New York</h3>
+
+						<hr>
+
+						<dl>
+
+							<dd>Private Networking</dd>
+
+							<dd>Dual Stack IPv4 / IPv6</dd>
+
+							<dd>Backups Available</dd>
+
+						<dl>
+
+					</div>
+
+				</div><!--End Item -->
+
+				<!-- Grid Item -->
+
+				<div class="uk-width-1-5">
+
+					<div class="uk-panel uk-panel-box uk-text-center unifiregionselection" region="sanfran">
+
+						<p><img src="img/usaflag-sm.png"></p>
+
+						<h3 class="uk-panel-title">San Francisco</h3>
+
+						<hr>
+
+						<dl>
+
+							<dd>Private Networking</dd>
+
+							<dd>Dual Stack IPv4 / IPv6</dd>
+
+							<dd>Backups Available</dd>
+
+						<dl>
+
+					</div><!--End Item -->
+
+				</div><!-- END Grid -->
+
+			</div>
+
+			
+
+			<div class="uk-form-row uk-margin">
+
+			<h3>Additional Options</h3>
+
+				<div class="uk-grid uk-margin">
+
+					<!-- Grid Item -->
+
+					<div class="uk-width-1-4">
+
+						<label><input type="checkbox" class="uk-margin" name="enablebackups"> Backups </label>
+
+					</div>
+
+				</div><!--End Grid -->
+
+			</div>
+
+			</p>
+
+			<hr>
+
+			<div class="uk-form-row uk-margin uk-margin-right">
+
+				<a class="uk-button uk-button-primary uk-button-large uk-width-100" href="" id="createserver">Create UniFi Controller</a>
+
+			</div>
+
+			<!-- Hidden fields taking input from panels -->
+
+			<input type="hidden" name="unifisize" id="unifisize">
+
+			<input type="hidden" name="unifiregion" id="unifiregion">
+
+			</fieldset>
+
+			</form>
+
+		</div>
+
+	
+
+	<!-- form specific javascript -->
+
+	<script type="text/javascript">
+
+	$(".unifisizeselection").click(function(){
+
+			$(".unifisizeselection").removeClass("uk-panel-box-primary");
+
+			$(this).addClass("uk-panel-box-primary");
+
+			var newValue = $(this).attr('serversize');
+
+			$("#unifisize").val(newValue);
+
+			updateProfileText()
+
+			console.log("Server Size Changed to " + $("#unifisize").val());
+
+		});
+
+		
+
+		$(".unifiregionselection").click(function(){
+
+			$(".unifiregionselection").removeClass("uk-panel-box-primary");
+
+			$(this).addClass("uk-panel-box-primary");
+
+			var newValue = $(this).attr('region');
+
+			$("#unifiregion").val(newValue);
+
+			updateProfileText()
+
+			console.log("Server Region Changed to " + $("#unifiregion").val());
+
+		});
+
+	</script>
+
+		</div>
+
+</div> <!-- END UNIFI CONTROLLER MODAL -->

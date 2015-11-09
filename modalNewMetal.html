@@ -1,0 +1,318 @@
+<!-- New Metal Modal -->
+	<div id="newMetalModal" class="uk-modal">
+		<div class="uk-modal-dialog uk-modal-dialog-large">
+		<button type="button" class="uk-modal-close uk-close"></button>
+			<div id="modalAJAX">
+				<h1>Create New Server</h1>
+				<h3 id="installprofile">&nbsp;</h3>
+					<!-- Begin OverFlow Container -->
+					<div class="uk-overflow-container">
+						<form class="uk-form" action="#">
+						<fieldset>
+						<div class="uk-form-row uk-margin uk-margin-right">
+						<h3>Server Hostname</h3>
+							<input type="text" name="hostname" id="hostname" placeholder="" class="uk-form-large uk-width-1-1">
+							<p class="uk-form-help-block">special characters not allowed</p>
+						</div>
+						<!-- Begin Server Size Section -->
+						<h3>Server Size</h3>
+						<!-- Begin Grid -->
+						<div class="uk-grid uk-margin uk-margin-right">
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+								<div class="uk-panel uk-panel-box uk-text-center sizeselection" serversize="mini">
+									<h3 class="uk-panel-title">Mini Server</h3>
+									<hr>
+									<dl>
+										<dt>$15<small>/MO</small></dt>
+										<dd>$0.0225<small>/hour</small>
+										<dt>1 GB/ 1 CPU</dt>
+										<dt>30 GB SSD</dt>
+										<dt>2 TB Transfer</dt>
+									</dl>
+								</div>
+							</div>
+							<!-- End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+								<div class="uk-panel uk-panel-box uk-text-center sizeselection" serversize="small">
+									<h3 class="uk-panel-title">Small Server</h3>
+									<hr>
+									<dl>
+										<dt>$30<small>/MO</small></dt>
+										<dd>$0.045<small>/hour</small>
+										<dt>2 GB/ 2 CPU</dt>
+										<dt>40 GB SSD</dt>
+										<dt>3 TB Transfer</dt>
+									</dl>
+								</div>
+							</div>
+							<!-- End Item -->			
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+								<div class="uk-panel uk-panel-box uk-text-center sizeselection" serversize="standard">
+									<h3 class="uk-panel-title">Standard Server</h3>
+									<hr>
+									<dl>
+										<dt>$60<small>/MO</small></dt>
+										<dd>$0.09<small>/hour</small>
+										<dt>4 GB/ 2 CPU</dt>
+										<dt>60 GB SSD</dt>
+										<dt>4 TB Transfer</dt>
+									</dl>
+								</div>
+							</div>
+							<!-- End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+								<div class="uk-panel uk-panel-box uk-text-center sizeselection" serversize="large">
+									<h3 class="uk-panel-title">Large Server</h3>
+									<hr>
+									<dl>
+										<dt>$120<small>/MO</small></dt>
+										<dd>$0.1785<small>/hour</small>
+										<dt>8 GB/ 4 CPU</dt>
+										<dt>80 GB SSD</dt>
+										<dt>5 TB Transfer</dt>
+									</dl>
+								</div>
+							</div>
+							<!-- End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+							<div class="uk-panel uk-panel-box uk-text-center sizeselection" serversize="larger">
+								<h3 class="uk-panel-title">Larger Server</h3>
+								<hr>
+								<dl>
+									<dt>$240<small>/MO</small></dt>
+									<dd>$0.357<small>/hour</small>
+									<dt>16 GB/ 8 CPU</dt>
+									<dt>160 GB SSD</dt>
+									<dt>6 TB Transfer</dt>
+								</dl>
+							</div>
+							</div>
+							<!-- End Item -->
+						</div>
+						<!-- END Grid -->
+						
+						<!-- Begin Region Section -->
+						<h3>Datacenter Region</h3>
+						<!-- Begin Grid -->
+						<div class="uk-grid uk-margin uk-margin-right">
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+								<div class="uk-panel uk-panel-box uk-text-center regionselection" region="nyc">
+									<p><img src="img/usaflag-sm.png"></p>
+									<h3 class="uk-panel-title">New York</h3>
+									<hr>
+									<dl>
+										<dd>Private Networking</dd>
+										<dd>Dual Stack IPv4 / IPv6</dd>
+										<dd>Backups Available</dd>
+									<dl>
+								</div>
+							</div>
+							<!--End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-5">
+								<div class="uk-panel uk-panel-box uk-text-center regionselection" region="sanfran">
+									<p><img src="img/usaflag-sm.png"></p>
+									<h3 class="uk-panel-title">San Francisco</h3>
+									<hr>
+									<dl>
+										<dd>Private Networking</dd>
+										<dd>Dual Stack IPv4 / IPv6</dd>
+										<dd>Backups Available</dd>
+									<dl>
+								</div>
+							</div>
+							<!--End Item -->
+						</div>
+						<!--End Grid -->
+						
+						<!-- Begin Region Section -->
+						<h3>Operating System</h3>
+						<!-- Begin Grid -->
+						<div class="uk-grid uk-margin uk-margin-right">
+							<!-- Grid Item -->
+							<div class="uk-width-1-4">
+							<div class="uk-panel uk-panel-box uk-text-center osselection" os="ubuntu">
+								<p><img src="img/ubuntu-sm.png"></p>
+								<h3 class="uk-panel-title">Ubuntu</h3>
+								<hr>
+								<dl>
+									<dd>LTS 14.04 x64</dd>
+									<dd></dd>
+									<dd></dd>
+								<dl>
+							</div>
+							</div>
+							<!--End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-4">
+							<div class="uk-panel uk-panel-box uk-text-center osselection" os="centos">
+								<p><img src="img/centos-sm.png"></p>
+								<h3 class="uk-panel-title">CentOS</h3>
+								<hr>
+								<dl>
+									<dd>7 x64</dd>
+									<dd></dd>
+									<dd></dd>
+								<dl>
+							</div>
+							</div>
+							<!--End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-4">
+							<div class="uk-panel uk-panel-box uk-text-center osselection" os="debian">
+								<p><img src="img/debian-sm.png"></p>
+								<h3 class="uk-panel-title">Debian</h3>
+								<hr>
+								<dl>
+									<dd>7.0 x64</dd>
+									<dd></dd>
+									<dd></dd>
+								<dl>
+							</div>
+							</div>
+							<!--End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-4">
+							<div class="uk-panel uk-panel-box uk-text-center osselection" os="fedora">
+								<p><img src="img/centos-sm.png"></p>
+								<h3 class="uk-panel-title">Fedora</h3>
+								<hr>
+								<dl>
+									<dd>21 x64</dd>
+									<dd></dd>
+									<dd></dd>
+								<dl>
+							</div>
+							</div>
+							<!--End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-4">
+							<div class="uk-panel uk-panel-box uk-text-center uk-margin-top osselection" os="windowss">
+								<p><img src="img/msft-sm.png"></p>
+								<h3 class="uk-panel-title">Windows 2012 R2</h3>
+								<hr>
+								<dl>
+									<dt>Server 2012 Standard</dt>
+									<dd>BYOLicense</dd>
+									<dd><em>Less 512Mb of Memory</em></dd>
+								<dl>
+							</div>
+							</div>
+							<!--End Item -->
+							<!-- Grid Item -->
+							<div class="uk-width-1-4">
+							<div class="uk-panel uk-panel-box uk-text-center uk-margin-top osselection" os="windowse">
+								<p><img src="img/msft-sm.png"></p>
+								<h3 class="uk-panel-title">Windows 2012 R2</h3>
+								<hr>
+								<dl>
+									<dt>Server 2012 Enterprise</dt>
+									<dd>BYOLicense</dd>
+									<dd><em>Less 512Mb of Memory</em></dd>
+								<dl>
+							</div>
+							</div>
+							<!--End Item -->
+						</div>
+						<!-- END Grid -->
+
+						<!-- Begin Additional Options Section -->
+						<div class="uk-form-row uk-margin">
+						<h3>Additional Options</h3>
+							<!-- Begin Grid -->
+							<div class="uk-grid uk-margin">
+								<!-- Grid Item -->
+								<div class="uk-width-1-4">
+									<label><input type="checkbox" class="uk-margin" name="enableipv6"> IPv6 </label>
+								</div>
+								<!--End Item -->
+								<!-- Grid Item -->
+								<div class="uk-width-1-4">
+									<label><input type="checkbox" class="uk-margin" name="enablebackups"> Backups </label>
+								</div>
+								<!--End Item -->
+								<!-- Grid Item -->
+								<div class="uk-width-1-4">
+									<label><input type="checkbox" class="uk-margin" name="privatenetworking"> Private Networking </label>
+								</div>
+								<!--End Item -->
+							</div><!--End Grid -->
+						</div>
+						<hr>
+						<div class="uk-form-row uk-margin uk-margin-right">
+							<a class="uk-button uk-button-primary uk-button-large uk-width-100" href="" id="createserver">Create Server</a>
+						</div>
+						
+						<!-- Hidden fields taking input from panels -->
+						<input type="hidden" name="size" id="size">
+						<input type="hidden" name="region" id="region">
+						<input type="hidden" name="os" id="os">
+						</fieldset>
+						</form>
+					</div>
+					<!-- End OverFlow Container -->
+
+					<!-- form specific javascript -->
+
+					<script type="text/javascript">
+						$(".sizeselection").click(function(){
+							$(".sizeselection").removeClass("uk-panel-box-primary");
+							$(this).addClass("uk-panel-box-primary");
+							var newValue = $(this).attr('serversize');
+							$("#size").val(newValue);
+							updateProfileText()
+							console.log("Server Size Changed to " + $("#size").val());
+						});
+						
+						$(".regionselection").click(function(){
+							$(".regionselection").removeClass("uk-panel-box-primary");
+							$(this).addClass("uk-panel-box-primary");
+							var newValue = $(this).attr('region');
+							$("#region").val(newValue);
+							updateProfileText()
+							console.log("Server Region Changed to " + $("#region").val());
+						});
+
+						$(".osselection").click(function(){
+							$(".osselection").removeClass("uk-panel-box-primary");
+							$(this).addClass("uk-panel-box-primary");
+							var newValue = $(this).attr('os');
+							$("#os").val(newValue);
+							updateProfileText()
+							console.log("Server OS Changed to " + $("#os").val());
+						});
+
+						$("#createserver").click(function(){
+							alert("creating server");
+						});
+
+						$("#hostname").change(function() {
+							updateProfileText();
+						});
+
+						function updateProfileText() {
+							var newText;
+							var thostName = $("#hostname").val();
+							if (thostName == "") { thostName = "&nbsp;"; }
+							var tserverSize = $("#size").val();
+							if (tserverSize == "") {tserverSize = "&nbsp;"; }
+							var tregion = $("#region").val();
+							if (tregion == "") { tregion = "&nbsp;"; }
+							var tos = $("#os").val();
+							if (tos == "") { tos = "&nbsp;"; }
+							newText = thostName + "&nbsp;&nbsp;" + tserverSize + "/" + tregion + "/" + tos;
+							$("#installprofile").html(newText);
+						}
+					</script>
+			<div>
+			<!-- END AJAX SECTION -->
+		</div>
+		<!-- End Modal Dialog -->
+	</div>
+	<!-- END NEW METAL MODAL -->

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" class="uk-height-1-1">
+    <head>
+        <title>FikesMedia - DoCloud</title>
+        <link rel="stylesheet" href="css/uikit.almost-flat.min.css" />
+		<link rel="stylesheet" href="css/components/sortable.min.css" />
+        <link rel="stylesheet" href="css/components/notify.almost-flat.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+        <script src="js/jquery.js"></script>
+        <script src="js/uikit.min.js"></script>
+		<script src="js/components/sortable.min.js"></script>
+		<script src="js/components/notify.min.js"></script>
+    </head>
+	<body class="uk-notouch uk-container-center">
+		<div class="uk-container uk-container-center uk-margin-large-bottom">
+	
+			<!-- BEGIN NAVIGATION -->
+			<nav class="uk-navbar">
+			<a href="" class="uk-navbar-brand"><img src="img/fmlogo-navbar.png"></a>
+			<ul class="uk-navbar-nav">
+				<li><a href="dashboard.html"><i class="uk-icon-dashboard"></i> My Cloud</a></li>
+			</ul>
+			<ul class="uk-navbar-nav">
+				<li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+					<a href=""><i class="uk-icon-cloud"></i> Cloud Hardware</a>
+					<div class="uk-dropdown uk-dropdown-navbar">
+						<ul class="uk-nav uk-nav-navbar">
+							<!--<li class="uk-nav-divider"></li>-->
+							<li class="uk-nav-header"><i class="uk-icon-server"></i> Bare Metal</li>
+							<li><a href="newMetal.html">Create Server</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-desktop"></i> Forged Metal</li>
+							<li><a href="newFromTemplate.html">Deploy Template</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="uk-navbar-nav">
+				<li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+					<a href=""><i class="uk-icon-cloud"></i> Cloud Services</a>
+					<div class="uk-dropdown uk-dropdown-navbar">
+						<ul class="uk-nav uk-nav-navbar">
+							<li><a href="#"><i class="uk-icon-user"></i> My Services</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-cubes"></i> Hosted Solutions</li>
+							<li><a href="#">New UniFi Site</a></li>
+							<li class="uk-nav-header"><i class="uk-icon-fire"></i> Managed Firewall</li>
+							<li><a href="firewall.html">Manage Firewall Rules</a></li>
+							<li><a href="#">VPN Connections</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="uk-navbar-nav"><li><a href="#"><i class="uk-icon-support"></i> Support</a></li></ul>
+			<div class="uk-navbar-content uk-navbar-flip  uk-hidden-small">
+				<div class="uk-button-group">
+					<a class="uk-button uk-button-danger" href="index.html"><i class="uk-icon-close"></i> Logout</a>
+				</div>
+			</div>
+			</nav>
+			<!-- END NAVIGATION -->
+
+
+
+			<!-- BEGIN Content -->
+			<div class="uk-container">
+				<h1 class="uk-margin-top">Manage Firewall Rules</h1>
+				<form class="uk-form" action="#">
+				<fieldset data-uk-margin>
+				<div class="uk-form-row uk-margin uk-margin-right">
+					<h3>Select Host</h3>
+					<select class="uk-form-width-large" name="host" id="host">
+						<option value="default">Select a Host</option>
+					</select>
+				</div>
+				<div class="uk-form-row uk-margin uk-margin-right">
+					<h3>Add New Rule</h3>
+					<div class="uk-form-row uk-margin uk-margin-right">
+					<input type="text" name="friendlyName" id="friendlyName" class="uk-form-width-large" placeholder="Friendly Rule Name Ex: Allow SSH">
+					<a class="uk-button uk-button-primary uk-button-small uk-margin-left" id="addRule"><i class="uk-icon-plus"></i> Add Rule</a> 
+					</div>
+					<input type="text" name="sourcenet" class="uk-form-width-medium" id="sourcenet" placeholder="Source Net Ex: 1.2.3.4/24">
+					<input type="text" name="destport" class="uk-form-width-small" id="destport" placeholder="Port Ex: 443">
+					<select class="uk-form-width-small" name="protocol" id="protocol">
+						<option value="tcp">TCP</option>
+						<option value="udp">UDP</option>
+						<option value="both">TCP/UDP</option>
+					</select>
+					<select class="uk-form-width-small" name="action" id="action">
+						<option value="ACCEPT">Accept</option>
+						<option value="DROP">Drop</option>
+					</select>
+					
+				</div>
+		
+				<div class="uk-form-row uk-margin" id="currentHostRules">
+					<h3>Existing Rules</h3>
+					<div style="list-style: none;" class="uk-sortable uk-margin" id="currentRules" data-uk-sortable="{handleClass:'uk-icon-arrows'}">
+					</div>
+					<a class="uk-button uk-button-primary uk-margin" id="saveRuleOrder"><i class="uk-icon-save"></i> Save Rule Order</a> 
+					</fieldset>
+					</form>
+				</div>
+	
+				<!-- form specific javascript -->
+				<script type="text/javascript">
+					//Initial population of Hosts
+					$(document).ready(function() {
+						function populateHosts(){
+							var data;
+							$.getJSON("hosts.json", function(data) {
+								$.each(data.hosts, function(i,host) {
+									var hostname,ipaddress;
+									hostname = host['hostname'];
+									ipaddress = host['ipaddress'];
+									var newHost = '<option value="' + ipaddress + '">' + hostname + '</option>\n';
+									if (host && ipaddress) { $("#host").append(newHost); }
+								});
+							});
+						}
+						populateHosts();
+					});
+				
+					//Save Rule Order
+					$("#saveRuleOrder").click(function(){
+						var source,port,action;
+						$("#currentRules").children().each(function() {
+							source = $(this).attr('sourcenet');
+							port = $(this).attr('destport');
+							protocol = $(this).attr('protocol');
+							action = $(this).attr('action');
+							var command = "iptables -A INPUT -s " + source + " -p " + protocol + " --dport " + port + " -j " + action;
+							console.log(command);
+						});
+						UIkit.notify({ 
+							'message': '<i class="uk-icon-check"></i> Rule Order Saved',
+							'status': 'success',
+							'timeout': 2000,
+							'pos': 'top-center'
+						});
+					});
+					
+					//Add Rule from Form
+					$("#addRule").click(function(){
+						var source,port,protocol,action,friendlyName;
+						source = $("#sourcenet").val();
+						port = $("#destport").val();
+						protocol = $("#protocol").val();
+						action = $("#action").val();
+						friendlyName = $("#friendlyName").val();
+						var newRule = '<div class="uk-panel uk-panel-box uk-margin" sourcenet="' + source + '" destport="' + port + '" protocol="' + protocol + '" action="' + action + '"><i class="uk-icon-arrows"> </i> ' + friendlyName + '<a class="uk-button uk-button-danger uk-button-mini uk-float-right delRule">Delete</a></div>';
+						if (source && port && protocol && action && friendlyName) {
+						$("#currentRules").append(newRule);
+						} else {
+							UIkit.notify({
+								'message':'<i class="uk-icon-remove"></i> Please Complete All Fields',
+								'status':'warning',
+								'timeout':3000,
+								'pos':'top-center'
+							});
+						}
+					});
+					
+					//Load Rules from Selected Host
+					$("#host").change(function(){
+						if($("#host").val() == "default") { $("#currentRules").html(""); return; }
+						$("#currentRules").html("");
+						var data;
+						$.getJSON("existingrules.json", function(data) {
+							$.each(data.rules, function(i,rule) {
+								var source,port,protocol,action,friendlyName;
+								source = rule['sourcenet'];
+								port = rule['destport'];
+								protocol = rule['protocol'];
+								action = rule['action'];
+								friendlyName = rule['friendlyname'];
+								var newRule = '<div class="uk-panel uk-panel-box uk-margin" sourcenet="' + source + '" destport="' + port + '" protocol="' + protocol + '" action="' + action + '"><i class="uk-icon-arrows"> </i> ' + friendlyName + '<a class="uk-button uk-button-danger uk-button-mini uk-float-right delRule">Delete</a></div>';
+								if (source && port && protocol && action && friendlyName) { $("#currentRules").append(newRule); }
+							});
+						});
+					});	
+					
+					//Delete Current Rule
+					$('#currentRules').on('click', '.delRule', function(){ 
+						$(this).parent().remove();
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
